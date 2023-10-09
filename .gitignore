@@ -1,0 +1,6 @@
+server/node_modules
+server/uploads/*
+*.env
+*.db
+
+web/node_modules

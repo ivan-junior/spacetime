@@ -2,6 +2,12 @@ import { FastifyInstance } from 'fastify';
 import { z } from 'zod';
 import { prisma } from '../lib/prisma';
 
+interface Data {
+    content: string
+    coverUrl?: string
+    isPublic: boolean
+}
+
 export async function memoriesRoutes(app: FastifyInstance) {
     app.addHook('preHandler', async (request) => {
         await request.jwtVerify()
@@ -12,7 +18,7 @@ export async function memoriesRoutes(app: FastifyInstance) {
                 userId: request.user.sub
             },
             orderBy: {
-                createdAt: 'asc'
+                createdAt: 'desc'
             }
         })
 
@@ -20,7 +26,8 @@ export async function memoriesRoutes(app: FastifyInstance) {
             return {
                 id: memory.id,
                 coverUrl: memory.coverUrl,
-                excerpt: memory.content.substring(0, 115).concat('...')
+                excerpt: memory.content.substring(0, 115).concat('...'),
+                createdAt: memory.createdAt
             }
         })
     })
@@ -92,15 +99,19 @@ export async function memoriesRoutes(app: FastifyInstance) {
             return reply.status(401).send()
         }
 
+        const dataToEdit: Data = {
+            content,
+            isPublic
+        }
+
+        if (coverUrl != '') {
+            dataToEdit.coverUrl = coverUrl
+        }
         memory = await prisma.memory.update({
             where: {
                 id,
             },
-            data: {
-                content,
-                coverUrl,
-                isPublic
-            }
+            data: dataToEdit
         })
 
         return memory
