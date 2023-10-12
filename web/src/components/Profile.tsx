@@ -11,7 +11,7 @@ export function Profile() {
                 {name}
                 <a
                     href="/api/auth/logout"
-                    className='block text-red-400 hover:text-red-300'>Quero sair
+                    className='block text-red-400 hover:text-red-300'>Logout
                 </a>
             </p>
         </div>

@@ -10,8 +10,8 @@ export function Signin() {
                 <User className='h-5 w-5 text-gray-500' />
             </div>
 
-            <p className='max-w-[140px] text-sm leading-snug'>
-                <span className='underline'>Crie sua conta</span> e salve suas memórias
+            <p className='text-sm leading-snug'>
+                <span className='underline'>Create your account</span> and save your memories
             </p>
         </a>
     )

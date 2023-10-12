@@ -56,7 +56,7 @@ export default async function Delete({ params }: { params: { id: string } }) {
                     </p>
                     <div className='flex items-center gap-4 justify-start'>
                         <Link href={`/memories/edit/${memory.id}`} className='flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100'>
-                            Editar
+                            Edit
                             <Pencil className='w-4 h-4' />
                         </Link>
                         <ButtonModal isOpen memoryId={params.id} />

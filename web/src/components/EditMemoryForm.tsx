@@ -73,7 +73,7 @@ export function EditMemoryForm({ memory }: { memory: Memory }) {
                     className='flex cursor-pointer items-center gap-1.5 text-sm text-gray-200 hover:text-gray-100'
                 >
                     <Camera className='h-4 w-4' />
-                    Editar mídia
+                    Edit media
                 </label>
 
                 <label
@@ -87,7 +87,7 @@ export function EditMemoryForm({ memory }: { memory: Memory }) {
                         defaultChecked={memory.isPublic}
                         className='h-4 w-4 rounded border-gray-400 bg-gray-700 text-purple-500'
                     />
-                    Memória pública
+                    Public memory
                 </label>
 
             </div>
@@ -115,7 +115,7 @@ export function EditMemoryForm({ memory }: { memory: Memory }) {
                 type='submit'
                 className='inline-block self-end rounded-full bg-green-500 px-5 py-3 font-alt text-sm uppercase leading-none text-black hover:bg-green-600'
             >
-                Salvar
+                Save
             </button>
         </form>
     )

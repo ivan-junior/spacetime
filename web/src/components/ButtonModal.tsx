@@ -21,7 +21,7 @@ export function ButtonModal({ isOpen, memoryId }: { isOpen?: boolean, memoryId: 
     return (
         <>
             <button className='flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100' onClick={() => setShowModal(!showModal)}>
-                Excluir
+                Delete
                 <Trash className='w-4 h-4' />
             </button>
             {showModal ? (
@@ -35,7 +35,7 @@ export function ButtonModal({ isOpen, memoryId }: { isOpen?: boolean, memoryId: 
                                 {/*header*/}
                                 <div className="flex items-start justify-between p-5 border-b border-solid border-gray-700 rounded-t">
                                     <h3 className="text-3xl font-semibold">
-                                        Modal Title
+                                        Confirmation
                                     </h3>
                                     <button
                                         className="p-1 ml-auto bg-transparent border-0 opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -49,19 +49,19 @@ export function ButtonModal({ isOpen, memoryId }: { isOpen?: boolean, memoryId: 
                                 {/*body*/}
                                 <div className="relative p-6 flex-auto">
                                     <p className="my-4 text-blueGray-500 text-lg leading-relaxed">
-                                        Tem certeza que deseja deletar a memória cadastrada?
+                                        Are you sure you want to delete this memory?
                                     </p>
                                 </div>
                                 {/*footer*/}
                                 <div className="flex items-center justify-end border-t border-solid border-gray-700 rounded-b p-6 gap-4">
                                     <button className='p-2 rounded-lg border-2 border-red-500 text-red-500 cursor-pointer' onClick={() => setShowModal(false)}>
-                                        CANCELAR
+                                        CANCEL
                                     </button>
                                     <button
                                         className='p-2 rounded-lg border-2 border-green-500 bg-green-500 text-white cursor-pointer font-semibold'
                                         onClick={() => deleteMemory(memoryId)}
                                     >
-                                        DELETAR
+                                        DELETE
                                     </button>
                                 </div>
                             </div>

@@ -60,15 +60,15 @@ export default async function Home() {
             </p>
             <div className='flex items-center gap-4 justify-start'>
               <Link href={`/memories/view/${memory.id}`} className='flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100'>
-                Ler mais
+                Read more...
                 <ArrowRight className='w-4 h-4' />
               </Link>
               <Link href={`/memories/edit/${memory.id}`} className='flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100'>
-                Editar
+                Edit
                 <Pencil className='w-4 h-4' />
               </Link>
               <Link href={`/memories/delete/${memory.id}`} className='flex items-center gap-2 text-sm text-gray-200 hover:text-gray-100'>
-                Excluir
+                Delete
                 <Trash className='w-4 h-4' />
               </Link>
             </div>
